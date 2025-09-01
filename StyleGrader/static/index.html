@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Transfer App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>StyleGrader</h1>
+        <p>Upload a source image and a reference image to transfer the color style</p>
+        
+        <div class="upload-section">
+            <div class="upload-box">
+                <h3>Source Image</h3>
+                <input type="file" id="sourceFile" accept="image/*">
+                <div class="image-preview" id="sourcePreview">
+                    <p>No image selected</p>
+                </div>
+            </div>
+            
+            <div class="upload-box">
+                <h3>Reference Image</h3>
+                <input type="file" id="referenceFile" accept="image/*">
+                <div class="image-preview" id="referencePreview">
+                    <p>No image selected</p>
+                </div>
+            </div>
+        </div>
+        
+        <button id="processBtn" disabled>Process Images</button>
+        
+        <div class="result-section">
+            <h3>Result</h3>
+            <div class="result-container" id="resultPreview">
+                <p>Processed image will appear here</p>
+            </div>
+            
+            <div class="adjustment-controls" style="margin-top: 20px; display: none;" id="adjustmentControls">
+                <h4>Color Adjustments</h4>
+                <div class="slider-container">
+                    <label for="brightness">Brightness: <span id="brightnessValue">0</span></label>
+                    <input type="range" id="brightness" min="-100" max="100" value="0" class="slider">
+                </div>
+                <div class="slider-container">
+                    <label for="contrast">Contrast: <span id="contrastValue">0</span></label>
+                    <input type="range" id="contrast" min="-100" max="100" value="0" class="slider">
+                </div>
+                <div class="slider-container">
+                    <label for="saturation">Saturation: <span id="saturationValue">0</span></label>
+                    <input type="range" id="saturation" min="-100" max="100" value="0" class="slider">
+                </div>
+                <div class="slider-container">
+                    <label for="temperature">Temperature: <span id="temperatureValue">0</span></label>
+                    <input type="range" id="temperature" min="-100" max="100" value="0" class="slider">
+                </div>
+                <button id="resetAdjustments" class="reset-btn">Reset Adjustments</button>
+            </div>
+            
+            <a id="downloadBtn" href="#" download="color_transfer_result.jpg" style="display: none; margin-top: 20px;">
+                Download Result
+            </a>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
